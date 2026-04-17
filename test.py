@@ -43,24 +43,17 @@ def questions(x:int):
    
 
 
-    for i in range(x):
 
               
-        print("did the question fail? n/number")
-        answer = input()
-        if(answer == "n"):
-            print("which one is correct?")
-            number = input()
-            index = int(number) -1
-            put_correct_word(to_sort[index])
+    print("did the question fail? n/number")
+    answer = input()
+    if(answer == "n"):
+        print("which one is correct?")
+        number = input()
+        put_correct_word(to_sort[int(number)-1])
 
-            for i in range(len(to_sort)):
-                if file_contains(wrong,to_sort[i]) == False:
-                    put_false_word(to_sort[i])
-
-        else: 
-            put_false_word(to_sort[int(answer)-1])
-            break
+    else: 
+        put_false_word(to_sort[int(answer)-1])
 
 
 for i in range(1000):
