@@ -50,11 +50,11 @@ def questions(x:int):
                 print("which one is correct?")
                 number = input()
                 index = int(number) -1
-                put_correct_word(to_sort.pop(index))
+                put_correct_word(to_sort[index])
 
-            for i in range(len(to_sort)):
-                if file_contains(wrong,to_sort[i]) == False:
-                    put_false_word(to_sort[i])
+                for i in range(len(to_sort)):
+                    if file_contains(wrong,to_sort[i]) == False:
+                        put_false_word(to_sort[i])
 
             else: 
                 put_false_word(to_sort[int(answer)-1])
