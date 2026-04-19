@@ -20,7 +20,8 @@ def put_false_word(string: str):
 def file_contains(filename:str,word:str):
     with open(filename,"r") as f:
         content = f.read()
-        if word in content:
+        keywords = content.split(' ')
+        if word in keywords:
             return True
         else :
             return False
@@ -50,10 +51,16 @@ def questions(x:int):
     if(answer == "n"):
         print("which one is correct?")
         number = input()
-        put_correct_word(to_sort[int(number)-1])
+        if file_contains(correct,to_sort[int(number)-1]) :  
+                print("already registered")
+        else:
+            put_correct_word(to_sort[int(number)-1])
 
     else: 
-        put_false_word(to_sort[int(answer)-1])
+        if file_contains(correct,to_sort[int(number)-1]) : 
+            print(" ")
+        else: 
+            put_false_word(to_sort[int(answer)-1])
 
 
 for i in range(1000):
