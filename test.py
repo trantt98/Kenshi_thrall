@@ -57,7 +57,7 @@ def questions(x:int):
             put_correct_word(to_sort[int(number)-1])
 
     else: 
-        if file_contains(correct,to_sort[int(number)-1]) : 
+        if file_contains(correct,to_sort[int(answer)-1]) : 
             print(" ")
         else: 
             put_false_word(to_sort[int(answer)-1])
